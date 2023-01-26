@@ -1,7 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import ScrollToTop from "react-scroll-up";
-import { FiChevronUp } from "react-icons/fi";
 
 import Header from "components/header";
 
