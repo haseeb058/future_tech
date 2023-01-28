@@ -1,16 +1,20 @@
 import React from "react";
 import Slider from "react-slick";
-
-import Header from "components/header";
-
-import { SlideList, slideSlick } from "utils/script";
 import { Link } from "react-router-dom";
+import { FiCheck } from "react-icons/fi";
+
+import Accordion from "components/accordion";
+import ServieceList from "components/serviece_list";
+
+import { SlideList, slideSlick } from "utils/constant";
+
+import aboutImg from "assets/images/about/about-4.png";
+import aboutImg2 from "assets/images/about/about-3.png";
+import Portfolio from "./portfolio";
 
 const Home = () => {
   return (
     <>
-      {/* <Helmet pageTitle="Business" /> */}
-      <Header />
       {/* Start Slider Area   */}
       <div className="slider-wrapper">
         <div className="slider-activation">
@@ -72,7 +76,7 @@ const Home = () => {
       {/* End Brand Area */}
 
       {/* Start Service Area  */}
-      {/* <div className="service-area creative-service-wrapper ptb--120 bg_color--1">
+      <div className="service-area creative-service-wrapper ptb--120 bg_color--1">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -87,27 +91,23 @@ const Home = () => {
           </div>
           <div className="row creative-service">
             <div className="col-lg-12">
-              <ServiceList
+              <ServieceList
                 item="6"
                 column="col-lg-4 col-md-6 col-sm-6 col-12 text-left"
               />
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* End Service Area  */}
 
       {/* Start About Area  */}
-      {/* <div className="rn-about-area ptb--120 bg_color--5">
+      <div className="rn-about-area ptb--120 bg_color--5">
         <div className="container">
           <div className="row row--35 align-items-center">
             <div className="col-lg-6">
               <div className="thumbnail">
-                <img
-                  className="w-100"
-                  src="/assets/images/about/about-4.png"
-                  alt="About Images"
-                />
+                <img className="w-100" src={aboutImg} alt="About Images" />
               </div>
             </div>
             <div className="col-lg-6">
@@ -120,7 +120,7 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="accordion-wrapper mt--30">
-                  <Accordion01 />
+                  <Accordion />
                 </div>
                 <div className="about-button mt--50">
                   <a className="rn-button-style--2 btn-solid" href="/about">
@@ -131,11 +131,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* End About Area  */}
 
       {/* Start About Area  */}
-      {/* <div className="rn-about-area ptb--120 bg_color--1">
+      <div className="rn-about-area ptb--120 bg_color--1">
         <div className="container">
           <div className="row row--35 align-items-center">
             <div className="col-lg-6 order-2 order-lg-1">
@@ -177,20 +177,16 @@ const Home = () => {
             </div>
             <div className="col-lg-6 order-1 order-lg-2">
               <div className="thumbnail position-relative">
-                <img
-                  className="w-100"
-                  src="/assets/images/about/about-3.png"
-                  alt="About Images"
-                />
-                <ModalVideo
+                <img className="w-100" src={aboutImg2} alt="About Images" />
+                {/* <ModalVideo
                   channel="youtube"
                   isOpen={this.state.isOpen}
                   videoId="ZOoVOfieAF8"
                   onClose={() => this.setState({ isOpen: false })}
-                />
+                /> */}
                 <button
                   className="video-popup position-top-center theme-color"
-                  onClick={this.openModal}
+                  // onClick={this.openModal}
                 >
                   <span className="play-icon"></span>
                 </button>
@@ -198,11 +194,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* End About Area  */}
 
       {/* Start Portfolio Area */}
-      {/* <div className="portfolio-area ptb--120 bg_color--5">
+      <div className="portfolio-area ptb--120 bg_color--5">
         <div className="portfolio-sacousel-inner">
           <div className="container">
             <div className="row">
@@ -217,7 +213,7 @@ const Home = () => {
               </div>
             </div>
             <div className="row">
-              <PortfolioList
+              <Portfolio
                 styevariation="text-left mt--40"
                 column="col-lg-4 col-md-6 col-sm-6 col-12"
                 item="6"
@@ -234,7 +230,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* End Portfolio Area */}
 
       {/* Start Team Area  */}
@@ -324,3 +320,15 @@ const Home = () => {
 };
 
 export default Home;
+
+var namesItemOne = [
+  "The Philosophy Of business analytics",
+  "Fast-Track Your business",
+  "Lies And Damn Lies About business",
+  "The Ultimate Deal On business",
+];
+var namesItemTwo = [
+  "Proof That business Really Works",
+  "Here Is What You Should Do For Your business",
+  "The Hidden Mystery Behind business",
+];

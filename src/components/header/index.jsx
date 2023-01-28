@@ -17,7 +17,7 @@ const Header = ({ color }) => {
           <nav className="mainmenunav d-lg-block">
             <ul className="mainmenu">
               <li className="has-droupdown">
-                <Link to="#">Home</Link>
+                <Link to="/">Home</Link>
                 <ul className="submenu">
                   <li>
                     <Link to="/main-demo">Main Demo</Link>
