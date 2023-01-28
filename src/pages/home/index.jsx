@@ -1,18 +1,24 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import { FiCheck } from "react-icons/fi";
+import ScrollToTop from "react-scroll-up";
+import { FiCheck, FiChevronUp } from "react-icons/fi";
 
+import Portfolio from "./portfolio";
+import CallAction from "./call_action";
+import Footer from "components/footer";
 import Accordion from "components/accordion";
 import ServieceList from "components/serviece_list";
 
-import { SlideList, slideSlick } from "utils/constant";
+import { BlogContent, SlideList, slideSlick } from "utils/constant";
 
 import aboutImg from "assets/images/about/about-4.png";
 import aboutImg2 from "assets/images/about/about-3.png";
-import Portfolio from "./portfolio";
+import BrandTwo from "components/brand_two";
 
 const Home = () => {
+  const PostList = BlogContent.slice(0, 3);
+
   return (
     <>
       {/* Start Slider Area   */}
@@ -64,7 +70,7 @@ const Home = () => {
       {/* End Slider Area   */}
 
       {/* Start Brand Area */}
-      {/* <div className="rn-brand-area bg_color--5 ptb--60">
+      <div className="rn-brand-area bg_color--5 ptb--60">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-12">
@@ -72,7 +78,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* End Brand Area */}
 
       {/* Start Service Area  */}
@@ -233,29 +239,8 @@ const Home = () => {
       </div>
       {/* End Portfolio Area */}
 
-      {/* Start Team Area  */}
-      {/* <div className="rn-team-area ptb--120 bg_color--1">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="section-title service-style--3 text-center mb--25 mb_sm--0">
-                <h2 className="title">Skilled Team</h2>
-                <p>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <Team column="col-lg-4 col-md-6 col-sm-6 col-12" />
-          </div>
-        </div>
-      </div> */}
-      {/* End Team Area  */}
-
       {/* Start Blog Area */}
-      {/* <div className="rn-blog-area pt--120 pb--80 bg_color--5">
+      <div className="rn-blog-area pt--120 pb--80 bg_color--5">
         <div className="container">
           <div className="row align-items-end">
             <div className="col-lg-12">
@@ -276,7 +261,8 @@ const Home = () => {
                     <a href="/blog-details">
                       <img
                         className="w-100"
-                        src={`/assets/images/blog/blog-${value.images}.jpg`}
+                        // src={`/assets/images/blog/blog-${value.images}.jpg`}
+                        src={value.images}
                         alt="Blog Images"
                       />
                     </a>
@@ -297,23 +283,23 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
       {/* End Blog Area */}
 
       {/* Start call To Action  */}
-      {/* <CallAction /> */}
+      <CallAction />
       {/* End call To Action  */}
 
       {/* Start Footer Style  */}
-      {/* <FooterTwo /> */}
+      <Footer />
       {/* End Footer Style  */}
 
       {/* Start Back To Top */}
-      {/* <div className="backto-top">
-        <ScrollToTop showUnder={160}>
+      <div className="backto-top">
+        <ScrollToTop showUnder={100}>
           <FiChevronUp />
         </ScrollToTop>
-      </div> */}
+      </div>
       {/* End Back To Top */}
     </>
   );
